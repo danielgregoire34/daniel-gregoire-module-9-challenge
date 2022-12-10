@@ -42,6 +42,11 @@ inquirer
     message: 'Which Liscense did you use?',
     choices:['Copyleft','permissive','Creative Commons','Public Domain'],
     },
+    {
+    type:'input',
+    name: 'github',
+    messages:"what is your github profile?",
+    }
 
 ])
 .then((data) => {
@@ -70,6 +75,11 @@ let writeToFile = (data) => {
     ${data.description}
 
 ## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution Guidlines](#contribution)
+- [Test Installation](#testinstallation)
+- [License](#license)
 
 ## Installation Instructions
     ${data.installation}
@@ -79,16 +89,18 @@ let writeToFile = (data) => {
     ${data.usage}
 
 
-## Contribution Guidlines----
+## Contribution Guidlines
     ${data.contribution}
 
 
-## Test Installation---- 
+## Test Installation
     ${data.testinstallation}
     
-## Licenses----
+## Licenses
     ${data.license}
     
+## Questions 
+- if you have anymore questions contact me via my github at:${data.github} 
     
     `
 
