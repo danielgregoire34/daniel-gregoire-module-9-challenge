@@ -22,20 +22,26 @@ inquirer
     message: 'Installation Instructions?',
     },
     {
-        type: 'input',
-        name: 'usage',
-        message: 'Usage Information?',
-        },
-        {
-            type: 'input',
-            name: 'contribution',
-            message: 'Contribution Guidelines?',
-            },
-            {
-                type: 'input',
-                name: 'testinstallation',
-                message: 'Test Instructions?',
-                },
+    type: 'input',
+    name: 'usage',
+    message: 'Usage Information?',
+    },
+    {
+    type: 'input',
+    name: 'contribution',
+    message: 'Contribution Guidelines?',
+    },
+    {
+    type: 'input',
+    name: 'testinstallation',
+    message: 'Test Instructions?',
+    },
+    {
+    type: 'list',
+    name: 'license',
+    message: 'Which Liscense did you use?',
+    choices:['Copyleft','permissive','Creative Commons','Public Domain'],
+    },
 
 ])
 .then((data) => {
@@ -58,28 +64,30 @@ function writeToFile(fileName, data) {
 */
 
 let writeToFile = (data) => {
-    return `#${data.title}
+    return `# ${data.title}
     
-    ##Description
+## Description
     ${data.description}
 
+## Table of Contents
 
-    ##Installation Instructions
+## Installation Instructions
     ${data.installation}
 
     
-    ##Usage Information
+## Usage Information
     ${data.usage}
 
 
-    ##Contribution Guidlines 
+## Contribution Guidlines----
     ${data.contribution}
 
 
-    ##Test Installation 
+## Test Installation---- 
     ${data.testinstallation}
     
-    
+## Licenses----
+    ${data.license}
     
     
     `
